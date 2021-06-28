@@ -1,0 +1,45 @@
+#!/bin/bash
+# Created 2021-06-28
+# Bash-Moduls by Thomas Pautler
+#  ______      ____
+# /_  __/___  / __ \____ _      __
+#  / / / __ \/ /_/ / __ \ | /| / /
+# / / / /_/ / ____/ /_/ / |/ |/ /
+#/_/  \____/_/    \____/|__/|__/
+#
+source ui-toolkit
+
+numlist() {
+	LIST="$1"
+	TITLE="$3"
+	LINE="$4"
+	LSTYL="${LINE:-━}"
+	print_c "$TITLE" "$LSTYL"
+	PS3=$(print_c "$LSTYL" "$LSTYL" ; echo "$2")
+	select RV in ${LIST}; do
+		return
+	done
+}
+
+LI=$(ls --group-directories-first ${HOME})
+numlist "$LI" "Please select: " " This is your Home Dir " 
+echo
+echo "$RV"
+
+
+multilist() {
+	LIST="$1"
+	TITLE="$3"
+	LINE="$4"
+	LSTYL="${LINE:-━}"
+	print_c "$TITLE" "$LSTYL"
+	PS3=$(print_c "$LSTYL" "$LSTYL" ; echo "$2")
+	select SL in ${LIST}; do
+		[[ -n $SL ]] && MV+="$SL " || return
+	done
+}
+
+#LI=$(ls --group-directories-first ${HOME})
+#multilist "$LI" "Please select multible, q to go back: " " This is your Home Dir "
+#echo
+#echo "$MV"
