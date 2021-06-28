@@ -18,7 +18,7 @@ List Divider = Space
 Let you enter multible choises and return a list of them.
 
 
-Yes/No Box
+## Yes/No Box
   
 `print_bc "Are you sure? y/N" ; read ; [[ $REPLY == [Yy] ]] && echo yes || echo no`
 
