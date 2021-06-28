@@ -40,3 +40,5 @@ multilist "$LI" "Please select multible, q to go back: " " This is your Home Dir
   Just copy to ${PATH} and make executible. 
   
   Then `source bash-moduls` in your script.
+  
+  ![screenshot](Screenshot_1.png)
