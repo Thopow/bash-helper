@@ -9,7 +9,7 @@ Return Var = $RV
 List Divider = Space
 
 
-## Multble selection
+## Multible selection
 
 Syntax = multilist <list> <promt> <title> <line-style>
 Return Var = $MV
